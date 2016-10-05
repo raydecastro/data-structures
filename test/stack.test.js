@@ -29,4 +29,20 @@ describe("Stack", () => {
 
     expect(stack.peek()).to.equal("b");
   });
+
+  it("shall have the ability to pop items off", () => {
+    let stack = new Stack();
+
+    stack.push("a");
+    stack.push("b");
+    stack.push("c");
+
+    expect(stack.size()).to.equal(3);
+
+    let item = stack.pop();
+
+    expect(item).to.equal("c");
+    expect(stack.size()).to.equal(2);
+    expect(stack.peek()).to.equal("b");
+  });
 });
