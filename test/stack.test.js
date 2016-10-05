@@ -20,4 +20,13 @@ describe("Stack", () => {
 
     expect(stack.size()).to.equal(3);
   });
+
+  it("shall have the ability to see the top most element", () => {
+    let stack = new Stack();
+
+    stack.push("a");
+    stack.push("b");
+
+    expect(stack.peek()).to.equal("b");
+  });
 });
