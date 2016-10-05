@@ -45,4 +45,14 @@ describe("Stack", () => {
     expect(stack.size()).to.equal(2);
     expect(stack.peek()).to.equal("b");
   });
+
+  it("shall have the ability to know if it's empty", () => {
+    let stack = new Stack();
+
+    expect(stack.isEmpty()).to.be.true;
+
+    stack.push("a");
+
+    expect(stack.isEmpty()).to.be.false;
+  });
 });
