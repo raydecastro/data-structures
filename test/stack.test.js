@@ -55,4 +55,18 @@ describe("Stack", () => {
 
     expect(stack.isEmpty()).to.be.false;
   });
+
+  it("shall have the ability to clear itself", () => {
+    let stack = new Stack();
+
+    stack.push("a");
+    stack.push("b");
+    stack.push("c");
+
+    expect(stack.size()).to.equal(3);
+
+    stack.clear();
+
+    expect(stack.size()).to.equal(0);
+  });
 });
