@@ -60,4 +60,31 @@ describe("Queue", () => {
       expect(error.message).to.equal("QueueIsEmptyError");
     }
   });
+
+  it("shall have ability dequeue items off", () => {
+    let queue = new Queue();
+
+    queue.enqueue("love");
+    queue.enqueue("rocks");
+
+    expect(queue.dequeue()).to.equal("love");
+    expect(queue.dequeue()).to.equal("rocks");
+  });
+
+  it("shall throw an error when dequeueing, if it's empty", () => {
+    let queue = new Queue();
+
+    queue.enqueue("love");
+    queue.enqueue("rocks");
+
+    expect(queue.dequeue()).to.equal("love");
+    expect(queue.dequeue()).to.equal("rocks");
+
+    try {
+      expect(queue.dequeue()).to.throw(new QueueIsEmptyError());
+    }
+    catch (error) {
+      expect(error.message).to.equal("QueueIsEmptyError");
+    }
+  });
 });

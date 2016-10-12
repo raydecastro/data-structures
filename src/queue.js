@@ -24,6 +24,14 @@ class Queue {
 
     return this.items[0];
   }
+
+  dequeue() {
+    if (this.isEmpty()) {
+      throw new QueueIsEmptyError();
+    }
+
+    return this.items.shift();
+  }
 }
 
 export default Queue;
