@@ -15,4 +15,14 @@ describe("Queue", () => {
 
     expect(queue.isEmpty()).to.be.true;
   });
+
+  it("shall have ability to enqueue new items", () => {
+    let queue = new Queue();
+
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+
+    expect(queue.isEmpty()).to.be.false;
+  });
 });
