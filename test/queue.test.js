@@ -38,4 +38,14 @@ describe("Queue", () => {
 
     expect(queue.size()).to.equal(5);
   });
+
+  it("shall have ability to check first element in queue", () => {
+    let queue = new Queue();
+
+    queue.enqueue("happy");
+    queue.enqueue(2);
+    queue.enqueue(1);
+
+    expect(queue.front()).to.equal("happy");
+  });
 });

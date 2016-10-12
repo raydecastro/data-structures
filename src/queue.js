@@ -14,6 +14,10 @@ class Queue {
   size() {
     return this.items.length;
   }
+
+  front() {
+    return this.items[0];
+  }
 }
 
 export default Queue;
