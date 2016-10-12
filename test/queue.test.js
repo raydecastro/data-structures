@@ -25,4 +25,17 @@ describe("Queue", () => {
 
     expect(queue.isEmpty()).to.be.false;
   });
+
+  it("shall have ability to check the size", () => {
+    let queue = new Queue();
+
+    queue.enqueue(1);
+    queue.enqueue(2);
+
+    expect(queue.size()).to.equal(2);
+
+    queue.enqueue(3, 4, 5);
+
+    expect(queue.size()).to.equal(5);
+  });
 });

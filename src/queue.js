@@ -10,6 +10,10 @@ class Queue {
   enqueue(...items) {
     this.items = this.items.concat(items);
   }
+
+  size() {
+    return this.items.length;
+  }
 }
 
 export default Queue;
