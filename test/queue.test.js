@@ -2,6 +2,7 @@
 
 import {expect} from "chai";
 import Queue from "../src/queue.js";
+import QueueIsEmptyError from "../src/queueIsEmptyError.js";
 
 describe("Queue", () => {
   it("shall exist", () => {
@@ -47,5 +48,16 @@ describe("Queue", () => {
     queue.enqueue(1);
 
     expect(queue.front()).to.equal("happy");
+  });
+
+  it("shall throw an error when checking first element in queue, if queue is empty", () => {
+    let queue = new Queue();
+
+    try {
+      expect(queue.front()).to.throw(new QueueIsEmptyError());
+    }
+    catch (error) {
+      expect(error.message).to.equal("QueueIsEmptyError");
+    }
   });
 });

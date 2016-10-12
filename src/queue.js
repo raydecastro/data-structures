@@ -1,3 +1,5 @@
+import QueueIsEmptyError from "./queueIsEmptyError.js";
+
 class Queue {
   constructor() {
     this.items = [];
@@ -16,6 +18,10 @@ class Queue {
   }
 
   front() {
+    if (this.isEmpty()) {
+      throw new QueueIsEmptyError();
+    }
+
     return this.items[0];
   }
 }
